@@ -356,6 +356,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Landing Pad
       objectReference: {fileID: 0}
+    - target: {fileID: 1196831410721720433, guid: 894feda983f306f4f89c32ad95cc1c20, type: 3}
+      propertyPath: m_TagString
+      value: Finish
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 894feda983f306f4f89c32ad95cc1c20, type: 3}
 --- !u!1001 &1795257455808962879
@@ -365,20 +369,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -7496146417453769461, guid: 568e1cc101af0d2459e66da8af9786d2, type: 3}
-      propertyPath: m_Mass
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: -7496146417453769461, guid: 568e1cc101af0d2459e66da8af9786d2, type: 3}
-      propertyPath: m_Constraints
-      value: 56
+    - target: {fileID: 967186282, guid: 568e1cc101af0d2459e66da8af9786d2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 304352873124485363, guid: 568e1cc101af0d2459e66da8af9786d2, type: 3}
       propertyPath: impulse
-      value: 2500
+      value: 200000
       objectReference: {fileID: 0}
     - target: {fileID: 304352873124485363, guid: 568e1cc101af0d2459e66da8af9786d2, type: 3}
-      propertyPath: turnVelocity
+      propertyPath: mainThrust
+      value: 250000
+      objectReference: {fileID: 0}
+    - target: {fileID: 304352873124485363, guid: 568e1cc101af0d2459e66da8af9786d2, type: 3}
+      propertyPath: rotationThrust
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1795257454901591615, guid: 568e1cc101af0d2459e66da8af9786d2, type: 3}
@@ -430,8 +434,8 @@ PrefabInstance:
       value: Rocket
       objectReference: {fileID: 0}
     - target: {fileID: 4750783649965086695, guid: 568e1cc101af0d2459e66da8af9786d2, type: 3}
-      propertyPath: gravityForce
-      value: 2
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 568e1cc101af0d2459e66da8af9786d2, type: 3}
@@ -445,6 +449,10 @@ PrefabInstance:
     - target: {fileID: 5706844390808780037, guid: cfca14825e86bec4f95dbf8a33a89112, type: 3}
       propertyPath: m_Name
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 5706844390808780037, guid: cfca14825e86bec4f95dbf8a33a89112, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 5706844390808780057, guid: cfca14825e86bec4f95dbf8a33a89112, type: 3}
       propertyPath: m_RootOrder
@@ -547,6 +555,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Launch Pad
       objectReference: {fileID: 0}
+    - target: {fileID: 8017963627039758333, guid: daa9bca991e005f4da0d71e15cb61fb6, type: 3}
+      propertyPath: m_TagString
+      value: Friendly
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daa9bca991e005f4da0d71e15cb61fb6, type: 3}
 --- !u!1001 &8307763522384657452
@@ -602,6 +614,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8307763523400278229, guid: ae293fa51046fc24fbee73d6acf2936a, type: 3}
       propertyPath: m_Name
+      value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8307763523400278229, guid: ae293fa51046fc24fbee73d6acf2936a, type: 3}
+      propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
     m_RemovedComponents: []

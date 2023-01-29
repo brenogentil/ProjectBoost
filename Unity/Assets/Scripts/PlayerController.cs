@@ -1,39 +1,61 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private Rigidbody playerRb;
+    [SerializeField] float mainThrust = 100f;
+    [SerializeField] float rotationThrust = 1f;
+    Rigidbody rb;
+    AudioSource audioSource;
 
-    [SerializeField] float impulse = 100;
-    [SerializeField] float turnVelocity = 50;
-
+    // Start is called before the first frame update
     void Start()
     {
-        playerRb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
     }
 
+    // Update is called once per frame
     void Update()
     {
-        InputMovement();
-        InputRotation();
+        ProcessThrust();
+        ProcessRotation();
     }
 
-    void InputMovement()
+    void ProcessThrust()
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            playerRb.AddRelativeForce(Vector3.up * impulse * Time.deltaTime, ForceMode.Impulse);
+            rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
+            if (!audioSource.isPlaying)
+            {
+             //   audioSource.Play();
+            }
+        }
+        else
+        {
+           // audioSource.Stop();
         }
     }
 
-    void InputRotation()
+    void ProcessRotation()
     {
-        float turnRocket = Input.GetAxis("Horizontal");
-        int clockwise = -1;
-        playerRb.freezeRotation = true;
-        transform.Rotate(Vector3.forward * turnRocket * turnVelocity * Time.deltaTime * clockwise);
-        //playerRb.freezeRotation = false;
+        if (Input.GetKey(KeyCode.A))
+        {
+            ApplyRotation(rotationThrust);
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            ApplyRotation(-rotationThrust);
+        }
+    }
+
+    void ApplyRotation(float rotationThisFrame)
+    {
+        rb.freezeRotation = true;  // freezing rotation so we can manually rotate
+        transform.Rotate(Vector3.forward * rotationThisFrame * Time.deltaTime);
+        rb.freezeRotation = false;  // unfreezing rotation so the physics system can take over
     }
 }
