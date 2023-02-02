@@ -5,16 +5,23 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+
+    public AudioClip rocketBoost;
+    public AudioSource audioSource;
+
+    CollisionHandler collisionHandlerScript;
+    Rigidbody rb;
+
     [SerializeField] float mainThrust = 100f;
     [SerializeField] float rotationThrust = 1f;
-    Rigidbody rb;
-    AudioSource audioSource;
+
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
+        collisionHandlerScript = GetComponent<CollisionHandler>();
     }
 
     // Update is called once per frame
@@ -24,29 +31,29 @@ public class PlayerController : MonoBehaviour
         ProcessRotation();
     }
 
-    void ProcessThrust()
+    public void ProcessThrust()
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
+            rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime, ForceMode.Impulse);
             if (!audioSource.isPlaying)
             {
-             //   audioSource.Play();
+                audioSource.PlayOneShot(rocketBoost);
             }
         }
         else
         {
-           // audioSource.Stop();
+           audioSource.Stop();
         }
     }
 
-    void ProcessRotation()
+    public void ProcessRotation()
     {
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             ApplyRotation(rotationThrust);
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.RightArrow))
         {
             ApplyRotation(-rotationThrust);
         }

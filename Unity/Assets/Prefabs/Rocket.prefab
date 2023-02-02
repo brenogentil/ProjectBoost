@@ -131,8 +131,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 524dc00f2e34b194fa5cc08f03a34168, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impulse: 2500
-  turnVelocity: 30
+  mainThrust: 2500
+  rotationThrust: 30
+  rocketBoost: {fileID: 8300000, guid: f71f3c79f36a17a459caac9db0092cb4, type: 3}
 --- !u!114 &4750783649965086695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,7 +157,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f71f3c79f36a17a459caac9db0092cb4, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.183
   m_Pitch: 1
@@ -249,7 +250,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1795257454901592003}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!114 &967186290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,3 +263,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fb662bdc340e1241baaa5177e261b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  crash: {fileID: 8300000, guid: 7c0ffd12519540f4b879b99c68d6b5d3, type: 3}
+  success: {fileID: 8300000, guid: 71715f808b23d694094ff2a40c379bcd, type: 3}
+  levelLoadDelay: 2

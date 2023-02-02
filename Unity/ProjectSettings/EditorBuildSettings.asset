@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AlienPlanet.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/AlienPlanet_2.unity
+    guid: 514b54f6d6992634593fa4a2f45d2c61
+  - enabled: 1
+    path: Assets/Scenes/AlienPlanet_3.unity
+    guid: 04139eedbd30fc547aa4d399e873b0e7
   m_configObjects: {}

@@ -10,13 +10,11 @@ public class Gravity : MonoBehaviour
 
     void Start()
     {
-        float initialGravity = Physics.gravity.y;
+        float initialGravity = -9.81f;
         Physics.gravity = new Vector3(0, initialGravity * gravityForce, 0);
+
+        Debug.Log("Gravity force: " + Physics.gravity.y);
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

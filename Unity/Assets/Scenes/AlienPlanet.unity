@@ -369,22 +369,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 967186282, guid: 568e1cc101af0d2459e66da8af9786d2, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 304352873124485363, guid: 568e1cc101af0d2459e66da8af9786d2, type: 3}
-      propertyPath: impulse
-      value: 200000
-      objectReference: {fileID: 0}
-    - target: {fileID: 304352873124485363, guid: 568e1cc101af0d2459e66da8af9786d2, type: 3}
-      propertyPath: mainThrust
-      value: 250000
-      objectReference: {fileID: 0}
-    - target: {fileID: 304352873124485363, guid: 568e1cc101af0d2459e66da8af9786d2, type: 3}
-      propertyPath: rotationThrust
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 1795257454901591615, guid: 568e1cc101af0d2459e66da8af9786d2, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -432,10 +416,6 @@ PrefabInstance:
     - target: {fileID: 1795257454901592003, guid: 568e1cc101af0d2459e66da8af9786d2, type: 3}
       propertyPath: m_Name
       value: Rocket
-      objectReference: {fileID: 0}
-    - target: {fileID: 4750783649965086695, guid: 568e1cc101af0d2459e66da8af9786d2, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 568e1cc101af0d2459e66da8af9786d2, type: 3}
