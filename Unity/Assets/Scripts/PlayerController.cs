@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
 
     public AudioClip rocketBoost;
     public AudioSource audioSource;
+    [SerializeField] ParticleSystem jetParticles;
+    [SerializeField] ParticleSystem thursterParticlesLeft;
+    [SerializeField] ParticleSystem thursterParticlesRight;
 
     CollisionHandler collisionHandlerScript;
     Rigidbody rb;
@@ -35,15 +38,11 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime, ForceMode.Impulse);
-            if (!audioSource.isPlaying)
-            {
-                audioSource.PlayOneShot(rocketBoost);
-            }
+            StartThrusting();
         }
         else
         {
-           audioSource.Stop();
+            StopThrusting();
         }
     }
 
@@ -51,12 +50,41 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            ApplyRotation(rotationThrust);
+            RotateLeft();
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            ApplyRotation(-rotationThrust);
+            RotateRight();
         }
+    }
+
+    private void StartThrusting()
+    {
+        rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime, ForceMode.Impulse);
+
+        if (!audioSource.isPlaying)
+        {
+            audioSource.PlayOneShot(rocketBoost);
+            jetParticles.Play();
+        }
+    }
+
+    private void StopThrusting()
+    {
+        audioSource.Stop();
+        jetParticles.Stop();
+    } 
+
+    private void RotateRight()
+    {
+        ApplyRotation(-rotationThrust);
+        thursterParticlesLeft.Play();
+    }
+
+    private void RotateLeft()
+    {
+        ApplyRotation(rotationThrust);
+        thursterParticlesRight.Play();
     }
 
     void ApplyRotation(float rotationThisFrame)
