@@ -18,8 +18,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float mainThrust = 100f;
     [SerializeField] float rotationThrust = 1f;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -27,7 +25,7 @@ public class PlayerController : MonoBehaviour
         collisionHandlerScript = GetComponent<CollisionHandler>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         ProcessThrust();

@@ -22,11 +22,6 @@ public class CollisionHandler : MonoBehaviour
     void Update()
     {
         RespondToDebugKeys();
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Debug.Log("collisionDisable: " + collisionDisable);
-        }
     }
 
     private void RespondToDebugKeys()
