@@ -943,6 +943,8 @@ MonoBehaviour:
   thursterParticlesRight: {fileID: 7466641651335210051}
   mainThrust: 2500
   rotationThrust: 160
+  yBound: 40
+  invertValue: -1
 --- !u!114 &4750783649965086695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1149,7 +1151,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3742372658245314638
 Transform:
   m_ObjectHideFlags: 0

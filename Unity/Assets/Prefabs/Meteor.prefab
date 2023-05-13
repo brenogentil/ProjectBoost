@@ -129,7 +129,7 @@ Transform:
   m_Children:
   - {fileID: 2066169174155330260}
   - {fileID: 4584632680937125918}
-  - {fileID: 1815722163772970271}
+  - {fileID: 1224221793314421856}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -224,7 +224,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a492056ae4dc7794ab820d2780ee28da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meteorExplosion: {fileID: 198204746014789312, guid: 8e18e2a4937c1c347bebb4ecb3abf0a8, type: 3}
+  meteorIsDestroyed: 0
+  meteorExplosion: {fileID: 1311293237946629562}
 --- !u!1 &2540791803118109314
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,7 +323,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1001 &1818749350862248453
+--- !u!1001 &1221192836052693882
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -379,8 +380,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e18e2a4937c1c347bebb4ecb3abf0a8, type: 3}
---- !u!4 &1815722163772970271 stripped
+--- !u!4 &1224221793314421856 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4436899185823514, guid: 8e18e2a4937c1c347bebb4ecb3abf0a8, type: 3}
-  m_PrefabInstance: {fileID: 1818749350862248453}
+  m_PrefabInstance: {fileID: 1221192836052693882}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1311293237946629562 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198204746014789312, guid: 8e18e2a4937c1c347bebb4ecb3abf0a8, type: 3}
+  m_PrefabInstance: {fileID: 1221192836052693882}
   m_PrefabAsset: {fileID: 0}

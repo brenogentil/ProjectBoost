@@ -17,6 +17,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] float mainThrust = 100f;
     [SerializeField] float rotationThrust = 1f;
+    [SerializeField] float yBound = 40f;
+    [SerializeField] float changeForce = 2f;
+    bool pushDown;
 
     void Start()
     {
@@ -30,7 +33,10 @@ public class PlayerController : MonoBehaviour
     {
         ProcessThrust();
         ProcessRotation();
+        AdjustHeigh();
     }
+
+ 
 
     public void ProcessThrust()
     {
@@ -53,6 +59,21 @@ public class PlayerController : MonoBehaviour
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             RotateRight();
+        }
+    }
+
+    private void AdjustHeigh()
+    {
+        if (transform.position.y > yBound && !pushDown)
+        {
+            transform.position = new Vector3(transform.position.x, yBound, transform.position.z);
+            mainThrust /= changeForce;
+            pushDown = true;
+        }
+        else if(transform.position.y < yBound && pushDown)
+        {
+            mainThrust *= changeForce;
+            pushDown = false;
         }
     }
 

@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class Gravity : MonoBehaviour
 {
-    [SerializeField] float gravityForce = 1.0f;
-
+    [SerializeField] float gravityForce = 1f;
 
     void Start()
     {
@@ -14,6 +13,10 @@ public class Gravity : MonoBehaviour
         Physics.gravity = new Vector3(0, initialGravity * gravityForce, 0);
 
         Debug.Log("Gravity force: " + Physics.gravity.y);
+    }
+
+    private void Update()
+    {
 
     }
 

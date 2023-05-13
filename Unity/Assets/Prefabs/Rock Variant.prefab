@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 5706844390808780037, guid: cfca14825e86bec4f95dbf8a33a89112, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5706844390808780039, guid: cfca14825e86bec4f95dbf8a33a89112, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

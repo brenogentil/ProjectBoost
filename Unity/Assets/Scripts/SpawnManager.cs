@@ -5,8 +5,6 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     [SerializeField] GameObject meteor;
-    [SerializeField] ParticleSystem meteorExplosion;
-    MeteorExplosion meteorExplosionScript;
 
     float startTime = 2f;
     float repeatTime = 5f;
@@ -15,26 +13,21 @@ public class SpawnManager : MonoBehaviour
 
     void Start()
     {
-        meteorExplosionScript = GameObject.Find("Meteor").GetComponent<MeteorExplosion>();
         InvokeRepeating("SpawnMeteor", startTime, repeatTime);
     }        
 
     
     void Update()
     {
-        meteorExplosion.transform.position = meteor.transform.position;
 
-        if(meteorExplosionScript.meteorIsDestroyed)
-        {
-            meteorExplosion.Play();
-        }
     }
 
     void SpawnMeteor()
     {
         Instantiate(meteor, SpawnRandomPosition(), Quaternion.identity);
-        Instantiate(meteorExplosion);
     }
+
+
 
     Vector3 SpawnRandomPosition()
     {
